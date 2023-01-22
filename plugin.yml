@@ -1,0 +1,9 @@
+name: TapTeleport
+main: CloverCube\TapTeleport
+version: 1.0
+author: CloverCube
+api: 4.0.0
+permissions:
+  maketp.command:
+    default: op
+    description: Allow command maketp
