@@ -7,6 +7,7 @@ namespace CloverCube;
 use CloverCube\Collection\Manage;
 use CloverCube\Collection\Teleports;
 use CloverCube\Commands\MakeTeleportCommand;
+use CloverCube\Commands\nametagVisibleCommand;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
@@ -28,6 +29,7 @@ class TapTeleport extends PluginBase {
 		$this->updateTeleports();
 
 		$this->getServer()->getCommandMap()->register("maketp", new MakeTeleportCommand($this));
+		$this->getServer()->getCommandMap()->register("nametagvisible", new NametagVisibleCommand($this));
 
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
 
