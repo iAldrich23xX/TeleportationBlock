@@ -1,5 +1,5 @@
 # TeleportationBlock
-Basic plugin "Teleportation Block"
+Basic plugin pmmp Teleportation Block
 
 Basic configuration...
 
