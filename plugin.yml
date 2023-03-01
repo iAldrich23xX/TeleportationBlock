@@ -1,7 +1,7 @@
 name: TapTeleport
-main: CloverCube\TapTeleport
+main: iAldrich23xX\TapTeleport
 version: 1.0
-author: CloverCube
+author: iAldrich23xX
 api: 4.0.0
 permissions:
   maketp.command:

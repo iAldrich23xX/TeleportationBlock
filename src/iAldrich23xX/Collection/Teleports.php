@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CloverCube\Collection;
+namespace iAldrich23xX\Collection;
 
 use pocketmine\world\Position;
 

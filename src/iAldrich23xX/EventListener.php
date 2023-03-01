@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CloverCube;
+namespace iAldrich23xX;
 
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerMoveEvent;
@@ -12,14 +12,11 @@ use pocketmine\world\sound\EndermanTeleportSound;
 
 class EventListener implements \pocketmine\event\Listener {
 
-	private TapTeleport $plugin;
+	public function __construct(
+        private TapTeleport $plugin
+    ) {}
 
-	public function __construct(TapTeleport $plugin)
-	{
-		$this->plugin = $plugin;
-	}
-
-	public function onQuit(PlayerQuitEvent $event)
+	public function onQuit(PlayerQuitEvent $event): void
 	{
 		if ($this->plugin->existManage($event->getPlayer()->getName())) $this->plugin->removeManage($event->getPlayer()->getName());
 	}
@@ -27,7 +24,7 @@ class EventListener implements \pocketmine\event\Listener {
 	/**
 	 * @throws \JsonException
 	 */
-	public function onInteract(PlayerInteractEvent $event)
+	public function onInteract(PlayerInteractEvent $event): void
 	{
 		$player = $event->getPlayer();
 
@@ -41,13 +38,13 @@ class EventListener implements \pocketmine\event\Listener {
 
 				$manage->saveCoords($manage->getSlot(), $block->getPosition());
 
-				$player->sendMessage(TextFormat::GREEN . "Bloque {$manage->getSlot()} guardado.");
+				$player->sendMessage(TextFormat::GREEN . "Block {$manage->getSlot()} saved");
 				$player->sendMessage(TextFormat::AQUA . "Name: {$block->getName()} X: {$block->getPosition()->getX()} Y: {$block->getPosition()->getY()} Z: {$block->getPosition()->getZ()}");
 
 				if ($manage->getSlot() == 1) {
-					$player->sendMessage(TextFormat::YELLOW . "Selecciona el bloque 2.");
+					$player->sendMessage(TextFormat::YELLOW . "Touch the second block");
 				} else if ($manage->getSlot() == 2) {
-					$player->sendMessage(TextFormat::LIGHT_PURPLE . "Teletransporte creado con exito.");
+					$player->sendMessage(TextFormat::LIGHT_PURPLE . "Teleport created successfully");
 
 					$manage->saveConfig();
 
@@ -59,7 +56,7 @@ class EventListener implements \pocketmine\event\Listener {
 		}
 	}
 
-	public function onMove(PlayerMoveEvent $event)
+	public function onMove(PlayerMoveEvent $event): void
 	{
 		if (empty($this->plugin->getTeleports())) return;
 

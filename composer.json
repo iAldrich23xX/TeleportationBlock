@@ -1,0 +1,19 @@
+{
+  "name": "ialdrich23xx/teleportation-block",
+  "description": "Plugin TeleportationBlock",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "iAldrich23xX",
+      "email": "wilsonalejandro83@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0"
+  }
+}

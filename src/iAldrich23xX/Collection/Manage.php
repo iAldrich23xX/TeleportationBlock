@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CloverCube\Collection;
+namespace iAldrich23xX\Collection;
 
-use CloverCube\TapTeleport;
+use iAldrich23xX\TapTeleport;
 use pocketmine\utils\Config;
 use pocketmine\world\Position;
 

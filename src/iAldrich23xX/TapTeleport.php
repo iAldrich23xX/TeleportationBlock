@@ -2,18 +2,15 @@
 
 declare(strict_types=1);
 
-namespace CloverCube;
+namespace iAldrich23xX;
 
-use CloverCube\Collection\Manage;
-use CloverCube\Collection\Teleports;
-use CloverCube\Commands\MakeTeleportCommand;
-use CloverCube\Commands\nametagVisibleCommand;
-
+use iAldrich23xX\Collection\Manage;
+use iAldrich23xX\Collection\Teleports;
+use iAldrich23xX\Commands\MakeTeleportCommand;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 use pocketmine\world\Position;
-
 use function array_key_exists;
 
 class TapTeleport extends PluginBase {
@@ -24,16 +21,15 @@ class TapTeleport extends PluginBase {
 	/** @var Manage[] */
 	private array $manage = [];
 
-	public function onEnable() : void
+	public function onEnable(): void
 	{
 		$this->updateTeleports();
 
-		$this->getServer()->getCommandMap()->register("maketp", new MakeTeleportCommand($this));
-		$this->getServer()->getCommandMap()->register("nametagvisible", new NametagVisibleCommand($this));
+		$this->getServer()->getCommandMap()->register("teleportation-block", new MakeTeleportCommand($this));
 
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
 
-		$this->getServer()->getLogger()->info(TextFormat::GREEN . "Plugin TapTeleport enable");
+		$this->getServer()->getLogger()->info(TextFormat::GREEN . "Plugin Teleportation Block enable");
 	}
 
 	public function addManage(string $name): void
@@ -85,7 +81,7 @@ class TapTeleport extends PluginBase {
 		}
 	}
 
-	public function onDisable() : void
+	public function onDisable(): void
 	{
 		$this->getServer()->getLogger()->info(TextFormat::RED . "Plugin TapTeleport disable");
 	}
