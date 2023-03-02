@@ -13,7 +13,7 @@ use pocketmine\world\sound\EndermanTeleportSound;
 class EventListener implements \pocketmine\event\Listener {
 
 	public function __construct(
-        private TapTeleport $plugin
+        private Loader $plugin
     ) {}
 
 	public function onQuit(PlayerQuitEvent $event): void

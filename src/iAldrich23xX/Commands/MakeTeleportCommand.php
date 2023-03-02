@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace iAldrich23xX\Commands;
 
-use iAldrich23xX\TapTeleport;
+use iAldrich23xX\Loader;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 
 class MakeTeleportCommand extends \pocketmine\command\Command {
 
-	private TapTeleport $plugin;
+	private Loader $plugin;
 
-	public function __construct(TapTeleport $plugin)
+	public function __construct(Loader $plugin)
 	{
 		$this->plugin = $plugin;
 

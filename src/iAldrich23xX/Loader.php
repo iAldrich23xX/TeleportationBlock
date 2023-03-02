@@ -13,7 +13,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\world\Position;
 use function array_key_exists;
 
-class TapTeleport extends PluginBase {
+class Loader extends PluginBase {
 
 	/** @var Teleports[]  */
 	private array $teleports = [];

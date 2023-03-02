@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace iAldrich23xX\Collection;
 
-use iAldrich23xX\TapTeleport;
+use iAldrich23xX\Loader;
 use pocketmine\utils\Config;
 use pocketmine\world\Position;
 
@@ -14,9 +14,9 @@ class Manage {
 
 	private int $slot = 1;
 
-	private TapTeleport $plugin;
+	private Loader $plugin;
 
-	public function __construct(TapTeleport $plugin)
+	public function __construct(Loader $plugin)
 	{
 		$this->plugin = $plugin;
 	}

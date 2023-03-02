@@ -6,4 +6,5 @@ projects:
   TeleportationBlock:
     path: ""
     icon: icon.png
+    lint: false
 ...
