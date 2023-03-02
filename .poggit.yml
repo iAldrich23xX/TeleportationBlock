@@ -5,4 +5,5 @@ branches:
 projects:
   TeleportationBlock:
     path: ""
+    icon: icon.png
 ...
