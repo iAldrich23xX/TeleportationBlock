@@ -10,47 +10,47 @@ use pocketmine\world\Position;
 
 class Manage {
 
-	private array $config = [];
+    private array $config = [];
 
-	private int $slot = 1;
+    private int $slot = 1;
 
-	private Loader $plugin;
+    private Loader $plugin;
 
-	public function __construct(Loader $plugin)
-	{
-		$this->plugin = $plugin;
-	}
+    public function __construct(Loader $plugin)
+    {
+        $this->plugin = $plugin;
+    }
 
-	/**
-	 * @throws \JsonException
-	 */
-	public function saveConfig() : void
-	{
-		$config = new Config($this->plugin->getDataFolder() . "config.yml", Config::YAML);
+    /**
+     * @throws \JsonException
+     */
+    public function saveConfig() : void
+    {
+        $config = new Config($this->plugin->getDataFolder() . "config.yml", Config::YAML);
 
-		$arrayOld = $config->getAll();
+        $arrayOld = $config->getAll();
 
-		$arrayOld[] = $this->config;
+        $arrayOld[] = $this->config;
 
-		$config->setAll($arrayOld);
-		$config->save();
+        $config->setAll($arrayOld);
+        $config->save();
 
-		$this->plugin->updateTeleports();
-	}
+        $this->plugin->updateTeleports();
+    }
 
-	public function getSlot(): int
-	{
-		return $this->slot;
-	}
+    public function getSlot(): int
+    {
+        return $this->slot;
+    }
 
-	public function saveCoords(int $slot, Position $coords): void
-	{
-		$this->config[$slot] = ['X' => $coords->getX(), 'Y' => $coords->getY() + 1, 'Z' => $coords->getZ(), 'world' => $coords->getWorld()->getFolderName()];
-	}
+    public function saveCoords(int $slot, Position $coords): void
+    {
+        $this->config[$slot] = ['X' => $coords->getX(), 'Y' => $coords->getY() + 1, 'Z' => $coords->getZ(), 'world' => $coords->getWorld()->getFolderName()];
+    }
 
-	public function increase(): void
-	{
-		$this->slot++;
-	}
+    public function increase(): void
+    {
+        $this->slot++;
+    }
 
 }

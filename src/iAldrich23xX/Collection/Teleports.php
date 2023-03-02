@@ -8,24 +8,24 @@ use pocketmine\world\Position;
 
 class Teleports {
 
-	private Position $position;
+    private Position $position;
 
-	private Position $teleport;
+    private Position $teleport;
 
-	public function __construct(Position $position, Position $teleport)
-	{
-		$this->position = $position;
+    public function __construct(Position $position, Position $teleport)
+    {
+        $this->position = $position;
 
-		$this->teleport = $teleport;
-	}
+        $this->teleport = $teleport;
+    }
 
-	public function getPosition(): Position
-	{
-		return $this->position;
-	}
+    public function getPosition(): Position
+    {
+        return $this->position;
+    }
 
-	public function getTeleport(): Position
-	{
-		return $this->teleport;
-	}
+    public function getTeleport(): Position
+    {
+        return $this->teleport;
+    }
 }
